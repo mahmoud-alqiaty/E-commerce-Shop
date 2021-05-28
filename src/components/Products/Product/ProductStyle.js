@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ProductPageContainer = styled.div `
     width: 100%;
-    height: 90vh;
+    min-height: 100vh;
     padding: 40px;
     display: flex;
     justify-content: center;
@@ -31,6 +31,7 @@ export const ProductItemContainer = styled.div `
 `
 export const ImgSide = styled.img `
     width: 50%;
+    height: 450px;
     display: block;
     padding: 40px;
 

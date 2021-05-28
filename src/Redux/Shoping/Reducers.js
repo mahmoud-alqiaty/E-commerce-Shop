@@ -3,15 +3,25 @@ import * as actionTypes from './Types'
 const initState = {
     products: [],
     cart: [],
-    currentItem: {}
+    currentItem: {},
+    homeProducts: [],
+    manProducts: [],
+    womanProducts: [],
+    jeweleryProducts: [],
+    electronicsProducts: [],
 }
 
 const shopReducer = (state=initState, {type, payload})=>{
     switch (type) {
         case actionTypes.SET_ALL_PRODUCTS :
+            // const manClothes = allProducts.filter(({category})=>category==="men's clothing")
             return{
                 ...state,
-                products: payload
+                products: payload,
+                manProducts: payload.filter(({category})=>category==="men's clothing"),
+                womanProducts: payload.filter(({category})=>category==="women's clothing"),
+                jeweleryProducts: payload.filter(({category})=>category==="jewelery"),
+                electronicsProducts: payload.filter(({category})=>category==="electronics")
             }
              
         case actionTypes.ADD_TO_CART :

@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import {useSelector} from 'react-redux'
-import {NavbarContainer, NavLogo, CartBox, Cart} from './NavbarStyle'
+import { menuIconSontext } from '../../App'
+import {NavbarContainer, MenuIcon, NavLogo, CartBox, Cart} from './NavbarStyle'
 
 const Navbar = () => {
     const cart = useSelector(state => state.shop.cart)
@@ -14,13 +15,17 @@ const Navbar = () => {
         setTotalCartAmount(totalAmount)
     }, [cart])
     
+    const {showSideBare, setShowSideBare} = useContext(menuIconSontext)
     return (
         <NavbarContainer>
-            <NavLogo to='/'>
-                redux shoping caret
-            </NavLogo>
+            <div className="logoAndMenuIcon">
+                <MenuIcon onClick={()=>setShowSideBare(!showSideBare)} />
+                <NavLogo to='/'>
+                    shoping
+                </NavLogo>
+            </div>
             <CartBox to='/cart'>
-                <span className="cart-text">cart</span>
+                {/* <span className="cart-text">cart</span> */}
                 <Cart />
                 <span className="count">{totalCartAmount}</span>
             </CartBox>
