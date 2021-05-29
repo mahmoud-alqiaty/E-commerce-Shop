@@ -16,6 +16,7 @@ import Electronics from './Pages/electronics/Electronics';
 import{useDispatch, useSelector} from 'react-redux'
 import axios from 'axios'
 import { setAllProducts } from './Redux/Shoping/Actions';
+import Footer from './components/Footer/Footer';
 
 export const menuIconSontext = createContext()
 
@@ -49,6 +50,7 @@ useEffect(() => {
           <Route path='/cart' exact component={Cart} />
           <Route path='/products/:productId' component={Product} />
         </Switch>
+        <Footer />
       </Router>
     </menuIconSontext.Provider>
   );

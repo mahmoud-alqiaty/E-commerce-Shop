@@ -14,14 +14,29 @@ const initState = {
 const shopReducer = (state=initState, {type, payload})=>{
     switch (type) {
         case actionTypes.SET_ALL_PRODUCTS :
-            // const manClothes = allProducts.filter(({category})=>category==="men's clothing")
+            const manProducts = payload.filter(({category})=>category==="men's clothing")
+            const womanProducts = payload.filter(({category})=>category==="women's clothing")
+            const electronicsProducts = payload.filter(({category})=>category==="electronics")
+            const jeweleryProducts = payload.filter(({category})=>category==="jewelery")
+            const randOne =Math.floor(Math.random()*4)
+            const randTwo =randOne>0? randOne-1 : randOne+1
+            const homeProducts = [
+                manProducts[randTwo],
+                womanProducts[randTwo],
+                jeweleryProducts[randTwo],
+                womanProducts[randOne],
+                electronicsProducts[randOne],
+                manProducts[randOne]
+            ]
+
             return{
                 ...state,
                 products: payload,
-                manProducts: payload.filter(({category})=>category==="men's clothing"),
-                womanProducts: payload.filter(({category})=>category==="women's clothing"),
-                jeweleryProducts: payload.filter(({category})=>category==="jewelery"),
-                electronicsProducts: payload.filter(({category})=>category==="electronics")
+                manProducts,
+                womanProducts,
+                jeweleryProducts,
+                electronicsProducts,
+                homeProducts
             }
              
         case actionTypes.ADD_TO_CART :

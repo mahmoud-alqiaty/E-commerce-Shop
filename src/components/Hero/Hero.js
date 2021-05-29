@@ -1,37 +1,49 @@
-import React from 'react'
-import manBanner from '../../images/manBnner.jpg'
-// import womanBanner from '../../images/womanBanner'
-import womanBageBanner from '../../images/womanPBageBnner.jpg'
-import manShoesBanner from '../../images/manShoesBanner.jpg'
-import styled from 'styled-components'
+import React, { useState } from 'react'
+import {Bannercontainer, moveInLeft, BannerInnercontainer, BannerItem} from './HeroStyle'
+import {Herodata} from './HeroData'
+import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 
-const Bannercontainer = styled.div `
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-wrap: nowrap;
-`
 
-const BannerItem = styled.div `
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${womanBageBanner});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-`
-const BannerItemImg = styled.img `
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-`
 const Hero = () => {
+    const [comingHerodata, setComingHerodata] = useState(Herodata)
+    let shifted
+
+    const handlenext = ()=>{
+        let updatedComingData = [...comingHerodata]
+        shifted = updatedComingData.shift();
+        updatedComingData.push(shifted);
+        setComingHerodata(updatedComingData)
+    }    
     return (
         <Bannercontainer>
-            <BannerItem>
-            </BannerItem>
+            <BannerInnercontainer>
+                {
+                    comingHerodata.map(({img, title, titleSpan, text, icon}, index)=>
+                    <BannerItem key={index} bg={img}>
+                        <div className="bannerItemCaption">
+                            <h1>{title}</h1>
+                            <h3>{titleSpan}</h3>
+                            <button>{text} {icon}</button>
+                        </div>
+                        </BannerItem>
+                    )
+                }
+            </BannerInnercontainer>
+            <div className="controls">
+                <div className="prev" onClick={handlenext}>
+                    <IoIosArrowBack />
+                </div>
+                <div className="next" onClick={handlenext}>
+                    <IoIosArrowForward />
+                </div>
+            </div>
+            <div className="dots">
+                <div className="singleDote"></div>
+                <div className="singleDote"></div>
+                <div className="singleDote"></div>
+                <div className="singleDote"></div>
+                <div className="singleDote"></div>
+            </div>
         </Bannercontainer>
     )
 }

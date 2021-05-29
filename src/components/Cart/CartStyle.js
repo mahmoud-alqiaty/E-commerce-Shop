@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 export const CartContainer = styled.div `
     width: 100%;
     padding: 30px;
@@ -12,7 +13,7 @@ export const CartSummary = styled.div `
     width: 50%;
     text-align: center;
     padding: 20px;
-    margin-bottom: 60px;
+    margin: 60px 0;
     border-radius: 10px;
     box-shadow: 2px 2px 7px blue;
 
