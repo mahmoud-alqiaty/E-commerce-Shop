@@ -59,25 +59,20 @@ export const SindleDote = styled.div `
 `
 
 export const BannerInnercontainer = styled.div `
-    width: 400%;
+    width: 100%;
     height: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    transform: translateX(0%);
     position: relative;
 `
 
-// const FadeIn = keyframes `font-size
-//     from{
-//         opacity: 0;
-//         transform: translateY(-10%);
-//     }
+const FadeIn = keyframes `
+    from{
+        opacity: 0;
+    }
 
-//     to{
-//         opacity: 1;
-//         transform: translateY(0);
-//     }
-// `
+    to{
+      opacity: 1;
+    }
+`
 
 export const BannerItem = styled.div `
     width: 100%;
@@ -94,6 +89,13 @@ export const BannerItem = styled.div `
     font-weight: bold;
     text-transform: uppercase;
     transition: 0.3s;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    animation: ${FadeIn} 5s ease-in-out infinite;
+    animation-delay: ${({animationDelay})=> animationDelay + "s"};
     
 `
 

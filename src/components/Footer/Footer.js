@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { DivBorder, FooterContainer, FooterLogo, Footercol } from './FooterStyle'
-import {FaFacebookF, FaTwitter, FaInstagram, FaPinterestP} from 'react-icons/fa'
+import {FaFacebookF, FaTwitter, FaInstagram, FaPinterestP, FaPhoneAlt, FaRegEnvelope, FaWhatsapp} from 'react-icons/fa'
 
 const Footer = () => {
     return (
@@ -30,23 +30,43 @@ const Footer = () => {
                 </div>
             </Footercol>
             <DivBorder />
-
             <Footercol>
                 <h4 className="colHeader">
                     contacts
                 </h4>
                 <div className="colCotent">
                     <Link to="/woman" className="footerColItem">
-                        <FaFacebookF />
+                        <FaPhoneAlt />: <span>+0945832458</span>
                     </Link>
                     <Link to="/woman" className="footerColItem">
-                        <FaTwitter />
+                        <FaRegEnvelope />: <span>mahmoudalqiaty15@gmail.com</span>
                     </Link>
                     <Link to="/woman" className="footerColItem">
-                        <FaInstagram />
+                        <FaWhatsapp />: <span>+095634189865</span>
                     </Link>
-                    <Link to="/man" className="footerColItem">
-                        <FaPinterestP />
+                </div>
+            </Footercol>
+            <DivBorder />
+            <Footercol>
+                <h4 className="colHeader">
+                    follow
+                </h4>
+                <div className="colCotent">
+                    <Link to="/" className="footerColItem follow-link">
+                        <span className="follow-link-icon "><FaFacebookF /></span> 
+                        <span className="follow-link-text facebook">Facebook</span>
+                    </Link>
+                    <Link to="/" className="footerColItem follow-link">
+                        <span className="follow-link-icon"><FaTwitter /></span> 
+                        <span className="follow-link-text twitter">Twitter</span>
+                    </Link>
+                    <Link to="/" className="footerColItem follow-link">
+                        <span className="follow-link-icon "><FaInstagram /></span>
+                        <span className="follow-link-text instagram">Instagram </span>
+                    </Link>
+                    <Link to="/" className="footerColItem follow-link">
+                        <span className="follow-link-icon"><FaPinterestP /></span>
+                        <span className="follow-link-text pinterest">Pinterest</span>
                     </Link>
                 </div>
             </Footercol>

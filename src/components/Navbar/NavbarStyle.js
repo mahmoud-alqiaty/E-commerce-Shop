@@ -7,7 +7,7 @@ import {HiOutlineMenuAlt2} from 'react-icons/hi'
 export const NavbarContainer = styled.nav `
     width: 100%;
     height: 60px;
-    background-color: blue;
+    background-color: #030a1c;
     display: flex;
     justify-content: space-between;
     align-items: center;
