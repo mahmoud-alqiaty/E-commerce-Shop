@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 
 export const Bannercontainer =  styled.div `
     width: 100%;
@@ -49,30 +49,25 @@ export const Bannercontainer =  styled.div `
     
 `
 
-export const SindleDote = styled.div `
+export const SingleDote = styled.div `
     width: 15px;
     height: 15px;
     border-radius: 50%;
     border: 1px solid #ddd;
     cursor: pointer;
-    background-color: ${({displayed})=>displayed==0? "#ddd":"transperant"};
+    background-color: ${({current, index})=>current==index? "#ddd":"transperant"};
 `
 
 export const BannerInnercontainer = styled.div `
     width: 100%;
     height: 100%;
     position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    transform: ${({current})=> `translateX(${-current*100}%)`};
+    transition:${({current})=>current==0? `none`:`transform 1.2s ease-in-out`} ;
 `
 
-const FadeIn = keyframes `
-    from{
-        opacity: 0;
-    }
-
-    to{
-      opacity: 1;
-    }
-`
 
 export const BannerItem = styled.div `
     width: 100%;
@@ -81,41 +76,60 @@ export const BannerItem = styled.div `
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    flex-shrink: 0;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
+
     font-weight: bold;
     text-transform: uppercase;
     transition: 0.3s;
+    opacity: 1;
 
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    animation: ${FadeIn} 5s ease-in-out infinite;
-    animation-delay: ${({animationDelay})=> animationDelay + "s"};
-    
 `
+
+const anmi = keyframes `
+    from{
+        opacity: 0;
+        transform: translateX(-90%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+`
+
 
  export const BannerCaption = styled.div `
     max-width: 80%;
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    text-align: left;
     align-items: center;
-    text-align: center;
     h1{
-        font-size: 50px;
+        font-size: 90px;
+        opacity:${({reapatedSlide})=>reapatedSlide? "1":"0"} ;
+        transform: ${({reapatedSlide})=>reapatedSlide? "translateX(-90%)":"translateX(0%)"} ;
+        animation:
+        ${({index, current, reapatedSlide})=>(index==current)? (reapatedSlide? "none" : css`${anmi} 2s ease-in-out forwards`): 'none'} ;
+        animation-delay: 1s;
     }
 
     h3{
-        background-color: red;
+        background: red;
         padding: 5px 15px;
         margin: 25px 0 35px;
         font-size: 28px;
+        opacity: 0;
+        transform: translateX(-90%);
+        animation:
+        ${({index, current})=>(index==current)? css`${anmi} 2s ease-in-out forwards`: 'none'} ;
+        animation-delay: 1.5s;
     }
 
     button{
@@ -131,6 +145,11 @@ export const BannerItem = styled.div `
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        opacity: 0;
+        transform: translateX(-90%);
+        animation:
+        ${({index, current})=>(index==current)? css`${anmi} 2s ease-in-out forwards`: 'none'} ;
+        animation-delay: 2s;
     }
 
     @media screen and (max-width: 600px){

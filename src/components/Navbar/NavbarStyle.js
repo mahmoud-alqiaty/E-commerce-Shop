@@ -31,36 +31,42 @@ export const MenuIcon = styled(HiOutlineMenuAlt2) `
     font-size: 35px;
     cursor: pointer;
     margin: 0 30px 0 0;
-    color: #fff;
+    color: #ddd;
 `
 export const NavLogo = styled(Link) `
     text-decoration: none;
     font-size: 24px;
     font-weight: 700;
-    color: #fff;
+    color: red;
     text-transform: uppercase;
 `
 
 export const CartBox = styled(Link) `
     text-decoration: none;
-    color: #000;
+    color: red;
     padding: 5px 15px;
-    background-color: #fff;
-    border-radius: 10px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
+    position: relative;
 
     .cart-text{
         font-size: 20px;
     }
 
     .count{
-        padding: 10px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         background-color: #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 60%;
+        top: 30%;
     }
 
 `

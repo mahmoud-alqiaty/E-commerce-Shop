@@ -17,6 +17,7 @@ import{useDispatch, useSelector} from 'react-redux'
 import axios from 'axios'
 import { setAllProducts } from './Redux/Shoping/Actions';
 import Footer from './components/Footer/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 export const menuIconSontext = createContext()
 
@@ -40,6 +41,7 @@ useEffect(() => {
       <Router>
         <Navbar />
         <SideBar />
+        <ScrollToTop />
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/allProducts' exact component={Products} />

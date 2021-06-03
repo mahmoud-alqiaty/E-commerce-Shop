@@ -11,6 +11,7 @@ const Electronics = () => {
 
     return (
         <ProductsPage>
+            <h1>electronics</h1>
             {
                 electronicsProducts.map(({id, title, price, category, image})=>
                     <ProductItem key={id} id={id} title={title} price={price} category={category} image={image} />

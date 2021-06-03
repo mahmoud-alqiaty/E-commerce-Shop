@@ -30,5 +30,11 @@ export const Herodata = [
         title: "comig soon...",
         titleSpan: "our new collections",
         text: "subscribe Now"
-    }
+    },
+    {
+        img: womanBageBanner,
+        title: "new arrivals",
+        titleSpan: "with new collections",
+        text: "new collections"
+    },
 ]

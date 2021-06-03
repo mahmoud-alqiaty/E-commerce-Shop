@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const SideBarContainer = styled.div `
     width: 250px;
     height: calc(100vh - 60px);
+    padding: 30px 0 80px;
     position: fixed;
     top: 60px;
     left: ${({showSideBare})=> showSideBare? "0":"-100%"};
@@ -13,6 +14,7 @@ export const SideBarContainer = styled.div `
     justify-content: space-between;
     align-items: center;
     transition: 0.4s;
+    overflow: auto;
     
 `
 export const SideBarList = styled.div `

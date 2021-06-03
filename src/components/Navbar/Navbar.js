@@ -25,7 +25,6 @@ const Navbar = () => {
                 </NavLogo>
             </div>
             <CartBox to='/cart'>
-                {/* <span className="cart-text">cart</span> */}
                 <Cart />
                 <span className="count">{totalCartAmount}</span>
             </CartBox>

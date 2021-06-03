@@ -10,7 +10,6 @@ export const ProductPageContainer = styled.div `
 
     @media screen and (max-width: 700px){
         height: auto;
-        padding: 10px;
     }
 `
 export const ProductItemContainer = styled.div `

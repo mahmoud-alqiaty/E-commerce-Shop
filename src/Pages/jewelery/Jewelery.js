@@ -11,6 +11,7 @@ const Jewelery = () => {
 
     return (
         <ProductsPage>
+            <h1>Jewelery</h1>
             {
                 jeweleryProducts.map(({id, title, price, category, image})=>
                     <ProductItem key={id} id={id} title={title} price={price} category={category} image={image} />

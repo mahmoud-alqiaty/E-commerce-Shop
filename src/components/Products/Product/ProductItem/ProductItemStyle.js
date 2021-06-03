@@ -2,12 +2,21 @@ import styled from 'styled-components'
 
 export const ProductsPage = styled.div `
     width: 100%;
-    margin: 40px 0px;
+    margin: 80px 0px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 25px;
     row-gap: 30px;
     box-sizing: border-box;
+
+    h1{
+        text-align: center;
+        padding: 5px ;
+        text-transform: capitalize;
+        border-bottom: 3px solid;
+        display: none;
+
+    }
 
     @media screen and (max-width: 1200px){
         grid-template-columns: repeat(3, 1fr);
@@ -18,6 +27,8 @@ export const ProductsPage = styled.div `
 
     @media screen and (max-width: 590px){
         grid-template-columns: repeat(1, 1fr);
+        width: 85%;
+        margin: 80px auto;
     }
 `
 
@@ -35,7 +46,7 @@ transition: 0.2s;
 export const ProductItemImg = styled.img `
 width: 100%;
 height: 350px;
-padding: 20px;
+padding: 10px;
 `
 
 export const ProductItemInfo = styled.div `
@@ -45,6 +56,8 @@ color: #000;
 font-weight: bold;
 position: relative;
 min-height: 250px;
+background-color: #efe;
+
 
 .title{
     text-decoration: none;

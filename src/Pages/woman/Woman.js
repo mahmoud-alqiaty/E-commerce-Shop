@@ -11,6 +11,7 @@ const Woman = () => {
 
     return (
         <ProductsPage>
+            <h1>woman's clothes</h1>
             {
                 womanProducts.map(({id, title, price, category, image})=>
                     <ProductItem key={id} id={id} title={title} price={price} category={category} image={image} />
