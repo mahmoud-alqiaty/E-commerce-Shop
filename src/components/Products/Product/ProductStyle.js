@@ -1,19 +1,22 @@
 import styled from 'styled-components'
+import { IoBagAddSharp } from 'react-icons/io5'
+
 
 export const ProductPageContainer = styled.div `
     width: 100%;
     min-height: 100vh;
     padding: 40px;
+    margin-top: 80px;
     display: flex;
     justify-content: center;
-    align-items: center;
 
     @media screen and (max-width: 700px){
         height: auto;
+        padding: 10px;
     }
 `
 export const ProductItemContainer = styled.div `
-    width: 70%;
+    width: 95%;
     height: 100%;
     display: flex;
     border: 1px solid #aaa;
@@ -26,6 +29,7 @@ export const ProductItemContainer = styled.div `
 
     @media screen and (max-width: 700px){
         flex-direction: column;
+        width: 100%;
     }
 `
 export const ImgSide = styled.img `
@@ -36,7 +40,8 @@ export const ImgSide = styled.img `
 
     @media screen and (max-width: 700px){
         width: 100%;
-        height: 500px;
+        height: 300px;
+        padding: 20px;
     }
 `
 
@@ -54,6 +59,7 @@ export const BorderLine = styled.div `
 export const InfoSide = styled.div `
     width: 50%;
     padding: 20px;
+    background-color: #eee;
 
     .desc{
         margin: 20px 0;
@@ -87,4 +93,8 @@ export const InfoSide = styled.div `
     @media screen and (max-width: 700px){
         width: 100%;
     }
+`
+
+export const AddCartIcon = styled(IoBagAddSharp) `
+width: 100px;
 `

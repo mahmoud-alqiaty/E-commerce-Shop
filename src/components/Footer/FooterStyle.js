@@ -18,7 +18,7 @@ export const FooterContainer = styled.div `
 `
 export const DivBorder = styled.div `
     width: 1px;
-    height: 150px;
+    height: 180px;
     background-color: #af0158;
     align-self: center;
 
@@ -34,6 +34,8 @@ export const FooterLogo = styled(Link) `
     color: #fff;
     align-self: center;
     margin-right: 30px;
+    font-family: 'Yellowtail', cursive;
+
 
     @media screen and (max-width: 900px){
         display: none;
@@ -55,15 +57,14 @@ export const Footercol = styled.div `
         margin-top: 15px;
     }
 
+    .follow-link{
+        display: flex;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 5px;
+    }
     .follow-link:hover{
         border-bottom: none;
-
-    }
-
-    .follow-link:hover .follow-link-text{
-        width: 90px;
-        border: 1px solid #ddd;
-        padding: 5px 10px;
 
     }
 
@@ -73,23 +74,21 @@ export const Footercol = styled.div `
 
     .follow-link-text{
         display: inline-block;
-        border-radius: 10px;
         overflow: hidden;
         width: 90px;
-        border: 1px solid #ddd;
-        padding: 5px 10px;
+        border-left: 1px solid #ddd;
     }
 
-    .facebook{
+    .follow-link-facebook{
         background-color: #3b5999;
     }
-    .twitter{
+    .follow-link-twitter{
         background-color: #55acee;
     }
-    .instagram{
+    .follow-link-insta{
         background-color: #e4405f;
     }
-    .pinterest{
+    .follow-link-pinterest{
         background-color: #bd081c;
     }
 
@@ -98,7 +97,7 @@ export const Footercol = styled.div `
         text-transform: capitalize;
         font-size: 16px;
         color: #ddd;
-        display: block;
+        display: flex;
         margin-top: 10px;
     }
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { IoBagAddSharp } from 'react-icons/io5'
 
 export const ProductsPage = styled.div `
     width: 100%;
@@ -109,4 +110,7 @@ background-color: #efe;
         box-shadow: 0 2px 5px #555;
     }
 }
+`
+
+export const AddCartIcon = styled(IoBagAddSharp) `
 `

@@ -1,5 +1,5 @@
 import './App.css';
-import {useEffect} from 'react'
+import {useEffect, useRef} from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar';
 import Products from './components/Products/Products';
@@ -31,16 +31,31 @@ function App() {
     .catch(err=> console.log(err.message))
 }
 
+const [showSideBare, setShowSideBare] = useState(false)
+
+const barRef = useRef(null)
+// const navbarRef = useRef(null)
+
+const handleDocumentclick = (e)=>{
+  if(!barRef.current.contains(e.target))
+  setShowSideBare(false)
+}
+
 useEffect(() => {
     fetchAllProducts()
+    document.addEventListener('mousedown', handleDocumentclick)
+    return()=>{
+        document.removeEventListener('mousedown', handleDocumentclick)
+    }
 }, [])
 
-  const [showSideBare, setShowSideBare] = useState(false)
   return (
     <menuIconSontext.Provider value={{showSideBare, setShowSideBare}}>
       <Router>
-        <Navbar />
-        <SideBar />
+        <Navbar></Navbar>
+        <div ref={barRef}>
+          <SideBar  />
+        </div>
         <ScrollToTop />
         <Switch>
           <Route path='/' exact component={Home} />

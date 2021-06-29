@@ -3,12 +3,12 @@ import styled from 'styled-components'
 export const SideBarContainer = styled.div `
     width: 250px;
     height: calc(100vh - 60px);
-    padding: 30px 0 80px;
+    padding: 0px 0 80px;
     position: fixed;
     top: 60px;
     left: ${({showSideBare})=> showSideBare? "0":"-100%"};
     z-index: 100;
-    background-color: #333;
+    background-color: #280a25;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -42,18 +42,23 @@ export const SideBarList = styled.div `
 export const LogInUp = styled.div `
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
 
     .login, .logup{
-        width: 45%;
+        width: 100%;
         text-decoration: none;
         text-transform: capitalize;
         font-size: 18px;
         font-weight: bold;
-        padding: 7px 15px;
-        border-radius: 7px;
+        padding: 10px 15px;
+        margin-bottom: 9px;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        cursor: pointer;
     }
 
     .login{

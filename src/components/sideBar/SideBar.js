@@ -16,8 +16,8 @@ const SideBar = () => {
                 <Link to="/electronics" className="listItem" onClick={()=>setShowSideBare(false)}>electronics</Link>
             </SideBarList>
             <LogInUp>
-                <Link className="login" to="/">log in</Link>
-                <Link className="logup" to="/">log up</Link>
+                <button className="login" to="/">log in</button>
+                <button className="logup" to="/">log up</button>
             </LogInUp>
         </SideBarContainer>
     )

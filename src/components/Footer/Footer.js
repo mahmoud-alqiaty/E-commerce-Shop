@@ -52,19 +52,19 @@ const Footer = () => {
                     follow
                 </h4>
                 <div className="colCotent">
-                    <Link to="/" className="footerColItem follow-link">
+                    <Link to="/" className="footerColItem follow-link follow-link-facebook">
                         <span className="follow-link-icon "><FaFacebookF /></span> 
                         <span className="follow-link-text facebook">Facebook</span>
                     </Link>
-                    <Link to="/" className="footerColItem follow-link">
+                    <Link to="/" className="footerColItem follow-link follow-link-twitter">
                         <span className="follow-link-icon"><FaTwitter /></span> 
                         <span className="follow-link-text twitter">Twitter</span>
                     </Link>
-                    <Link to="/" className="footerColItem follow-link">
+                    <Link to="/" className="footerColItem follow-link follow-link-insta">
                         <span className="follow-link-icon "><FaInstagram /></span>
                         <span className="follow-link-text instagram">Instagram </span>
                     </Link>
-                    <Link to="/" className="footerColItem follow-link">
+                    <Link to="/" className="footerColItem follow-link follow-link-pinterest">
                         <span className="follow-link-icon"><FaPinterestP /></span>
                         <span className="follow-link-text pinterest">Pinterest</span>
                     </Link>

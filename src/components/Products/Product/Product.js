@@ -4,6 +4,7 @@ import { useParams } from 'react-router'
 import {addToCart, showItemDetails} from '../../../Redux/Shoping/Actions'
 
 import {ProductPageContainer, ProductItemContainer, ImgSide, BorderLine, InfoSide} from './ProductStyle'
+import {AddCartIcon} from './ProductStyle'
 
 const Product = () => {
     // const products = useSelector(state => state.shop.products)
@@ -36,7 +37,7 @@ const Product = () => {
                         className="addToCart-Btn" 
                         onClick={()=>dispatch(addToCart(id))}
                     >
-                        Add To Cart
+                        <AddCartIcon />
                     </span>
                 </InfoSide>
             </ProductItemContainer>

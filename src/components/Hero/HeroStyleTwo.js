@@ -94,12 +94,12 @@ export const BannerItem = styled.div `
 const anmi = keyframes `
     from{
         opacity: 0;
-        transform: translateX(-90%);
+        transform: translateY(90%);
     }
 
     to{
         opacity: 1;
-        transform: translateX(0%);
+        transform: translateY(0%);
     }
 `
 
@@ -114,7 +114,7 @@ const anmi = keyframes `
     h1{
         font-size: 90px;
         opacity:${({reapatedSlide})=>reapatedSlide? "1":"0"} ;
-        transform: ${({reapatedSlide})=>reapatedSlide? "translateX(-90%)":"translateX(0%)"} ;
+        transform: ${({reapatedSlide})=>reapatedSlide? "translateY(90%)":"translateY(0%)"} ;
         animation:
         ${({index, current, reapatedSlide})=>(index==current)? (reapatedSlide? "none" : css`${anmi} 2s ease-in-out forwards`): 'none'} ;
         animation-delay: 1s;
@@ -126,7 +126,7 @@ const anmi = keyframes `
         margin: 25px 0 35px;
         font-size: 28px;
         opacity: 0;
-        transform: translateX(-90%);
+        transform: translateY(90%);
         animation:
         ${({index, current})=>(index==current)? css`${anmi} 2s ease-in-out forwards`: 'none'} ;
         animation-delay: 1.5s;
@@ -146,7 +146,7 @@ const anmi = keyframes `
         justify-content: center;
         cursor: pointer;
         opacity: 0;
-        transform: translateX(-90%);
+        transform: translateY(90%);
         animation:
         ${({index, current})=>(index==current)? css`${anmi} 2s ease-in-out forwards`: 'none'} ;
         animation-delay: 2s;

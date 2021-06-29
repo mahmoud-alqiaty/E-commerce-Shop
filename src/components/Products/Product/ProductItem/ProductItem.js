@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import{useDispatch, useSelector} from 'react-redux'
 
 
-import {ProductItemContainer, ProductItemImg, ProductItemInfo} from './ProductItemStyle'
+import {ProductItemContainer, ProductItemImg, ProductItemInfo, AddCartIcon} from './ProductItemStyle'
 import {setAllProducts, addToCart} from '../../../../Redux/Shoping/Actions'
 
 
@@ -31,7 +31,7 @@ const ProductItem = ({id, title, price, category, image}) => {
                         className="addToCart-Btn" 
                         onClick={()=>handleAddToCart(id)}
                     >
-                        Add To Cart
+                        <AddCartIcon />
                     </span>
                 </div>
             </ProductItemInfo>

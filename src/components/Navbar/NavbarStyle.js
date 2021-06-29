@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import {ImCart} from 'react-icons/im'
+import {GiShoppingBag} from 'react-icons/gi'
 import {HiOutlineMenuAlt2} from 'react-icons/hi'
+import {TiTimes} from 'react-icons/ti'
 
 
 export const NavbarContainer = styled.nav `
@@ -33,11 +34,18 @@ export const MenuIcon = styled(HiOutlineMenuAlt2) `
     margin: 0 30px 0 0;
     color: #ddd;
 `
+export const CloseIcon = styled(TiTimes) `
+    font-size: 35px;
+    cursor: pointer;
+    margin: 0 30px 0 0;
+    color: #ddd;
+`
 export const NavLogo = styled(Link) `
     text-decoration: none;
     font-size: 24px;
     font-weight: 700;
-    color: red;
+    color: #ddd;
+    font-family: 'Yellowtail', cursive;
     text-transform: uppercase;
 `
 
@@ -70,7 +78,7 @@ export const CartBox = styled(Link) `
     }
 
 `
-export const Cart = styled(ImCart) `
+export const Cart = styled(GiShoppingBag) `
     font-size: 30px;
     cursor: pointer;
     margin: 0 10px;

@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useContext} from 'react'
 import {useSelector} from 'react-redux'
 import { menuIconSontext } from '../../App'
-import {NavbarContainer, MenuIcon, NavLogo, CartBox, Cart} from './NavbarStyle'
+import {NavbarContainer, MenuIcon, CloseIcon, NavLogo, CartBox, Cart} from './NavbarStyle'
 
 const Navbar = () => {
     const cart = useSelector(state => state.shop.cart)
@@ -19,7 +19,11 @@ const Navbar = () => {
     return (
         <NavbarContainer>
             <div className="logoAndMenuIcon">
-                <MenuIcon onClick={()=>setShowSideBare(!showSideBare)} />
+                {
+                    showSideBare?
+                    <CloseIcon onClick={()=>setShowSideBare(false)} /> :
+                    <MenuIcon onClick={()=>setShowSideBare(true)} />
+                }
                 <NavLogo to='/'>
                     shoping
                 </NavLogo>
