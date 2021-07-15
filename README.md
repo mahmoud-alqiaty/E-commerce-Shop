@@ -1,4 +1,4 @@
-#An e-commerce web application
+# An e-commerce web application
 
 An e-commerce web application for listing products for users, adding products to the shopping cart, paying online and making orders dealing with real restful APIs built for training purposes.
 
